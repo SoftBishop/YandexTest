@@ -61,7 +61,6 @@ public class KemerovoMoscowScenario {
         Assert.assertEquals(3,webElementsHandler.countElementsIsDisplayed(routePageYandex.getRouteDurations()));
         Assert.assertEquals(quantityElementsIsDisplayedIcons,imageRecognizer.collectImages());
 
-        Thread.sleep(5000);
     }
     @After
     public void stop()

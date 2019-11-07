@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MainPageYandex;
 import pages.RoutePageYandex;
-import tools.ImageRecognizer;
 import tools.WebElementsHandler;
 
 import java.util.concurrent.TimeUnit;
@@ -51,7 +50,7 @@ public class WrongDirectionScenario {
                 elementsHandler.getTextFromElement(routePageYandex.getErrorDirectionMessage()));
 
         Assert.assertEquals(true,elementsHandler.isElementDisplayed(routePageYandex.getErrorDirectionMessage()));
-        Thread.sleep(5000);
+
     }
     @After
     public void stop()
