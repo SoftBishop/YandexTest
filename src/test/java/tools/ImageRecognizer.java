@@ -8,15 +8,14 @@ import java.util.Iterator;
 
 public class ImageRecognizer {
 
-    Screen screen;
-
-    Iterator images;
+    private Screen screen;
 
     private static final Pattern planeImage
-            = new Pattern("D:\\Programming\\YandexTest\\src\\test\\resource\\plane.png");
-    private static final Pattern busImage = new Pattern("D:\\Programming\\YandexTest\\src\\test\\resource\\bus.png");
+            = new Pattern(System.getProperty("user.dir")+"\\src\\test\\resource\\plane.png");
+    private static final Pattern busImage
+            = new Pattern(System.getProperty("user.dir")+"\\src\\test\\resource\\bus.png");
     private static final Pattern trainImage =
-            new Pattern("D:\\Programming\\YandexTest\\src\\test\\resource\\train.png");
+            new Pattern(System.getProperty("user.dir")+"\\src\\test\\resource\\train.png");
 
 
     public ImageRecognizer()
@@ -40,7 +39,7 @@ public class ImageRecognizer {
         }
         catch (FindFailed ex)
         {
-            System.out.println("Изображения не найдены");
+            System.out.println("Изображения не найдены для паттерна " + patternImage.getFilename());
             return  iterator = null;
         }
         return iterator;
@@ -59,7 +58,6 @@ public class ImageRecognizer {
             iterator.next();
             counter++;
         }
-        System.out.println(counter);
         return counter;
     }
 
